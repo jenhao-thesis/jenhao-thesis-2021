@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.1.23)  24 JAN 2021 12:32
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.1.23)  24 JAN 2021 13:15
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -960,11 +960,6 @@ Underfull \hbox (badness 10000) detected at line 29
 
 ] (./chapters/01 introduction.tex
 Chapter 1.
-
-Overfull \hbox (7.69534pt too wide) in paragraph at lines 4--6
-[]\TU/DFKai-SB(0)/m/n/12 本 \TU/TimesNewRoman(0)/m/n/12 template \TU/DFKai-SB(0)/m/n/12 參 考 國 立 交 通 大 學 註 冊 組 所 提 供 的 \TU/TimesNewRoman(0)/m/n/12 “\TU/DFKai-SB(0)/m/n/12 學 位 論 文 格 式\TU/TimesNewRoman(0)/m/n/12 ” (http:// aadm.nctu.edu.tw/
- []
-
 ) (./chapters/02 background.tex [1
 
 
@@ -1008,14 +1003,8 @@ Appendix A.
 
 
 ] (./main.aux)
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: B53226F5FADAC642C1BBE268A3A14C22;1920
-(rerunfilecheck)             After:  F6C1276B8CA4AE589102BE35311576EB;860.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: F6C1276B8CA4AE589102BE35311576EB;860.
  )
 (\end occurred when \iffalse on line 1 was incomplete)
 (\end occurred when \iffalse on line 1 was incomplete)
@@ -1024,10 +1013,10 @@ Package rerunfilecheck Info: Checksums for `main.out':
 (\end occurred when \iffalse on line 1 was incomplete)
 (\end occurred when \iffalse on line 1 was incomplete) 
 Here is how much of TeX's memory you used:
- 26236 strings out of 477220
- 539418 string characters out of 5834001
- 993450 words of memory out of 5000000
- 45394 multiletter control sequences out of 15000+600000
+ 26263 strings out of 477220
+ 541424 string characters out of 5834001
+ 999450 words of memory out of 5000000
+ 45421 multiletter control sequences out of 15000+600000
  408745 words of font info for 92 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,13n,130p,458b,382s stack positions out of 5000i,500n,10000p,200000b,80000s
