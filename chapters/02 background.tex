@@ -1,10 +1,21 @@
 \chapter{Background}
 \label{chapter:background}
 
-\section{Ethereum Smart Contract}
-Ethereum~\cite{buterin2014next} was proposed in 2014 by Vitalik Buterin, it is a decentralized, open-source blockchain, and it also supports smart contracts. Because Ethereum enables smart contracts, the programmers can build their distributed applications by writing smart contract programs, e.g., Solidity. With smart contract technology, they can build self-enforce, self-verify and tamper-proof systems, such as voting systems, healthcare, supply chain, financial service, and so on. In the Etheruem platform, the block not only stores transaction records, but also stores smart contract programs so that Ethereum has the capability to compute business logic.\par
-- block structure
-- evm architecture
+\section{Ethereum}
+    \subsection{Smart Contract}
+        Ethereum~\cite{buterin2014next} was proposed in 2014 by Vitalik Buterin, it is a decentralized, open-source blockchain, and it also supports smart contracts. Because Ethereum enables smart contracts, the programmers can build their distributed applications by writing smart contract programs, e.g., Solidity. With smart contract technology, they can build self-enforce, self-verify and tamper-proof systems, such as voting systems, healthcare, supply chain, financial service, and so on. In the Etheruem platform, the block not only stores transaction records, but also stores smart contract programs so that Ethereum has the capability to compute business logic.\par
+        - block structure\par
+        - evm architecture\par
+
+    \subsection{Elliptic Curve Cryptography (ECC)}
+        Elliptic Curve Cryptography is public key cryptography based on elliptic curves. In Ethereum, they use ECC to generate the key pair. Initially, the base point \(G\) on elliptic curve \(CURVE\) must be provided, and then randomly generate 256-bits integer \(m\) as a private key which is used to sign message or transaction. If given \(m\), it is easy and fast to find 512-bits public key \(P\). But if given \(P\), it is impossible to find \(m\) because of Elliptic Curve Logarithm Problem. The Ethereum address is the last 20-bytes of  Keccak-256 hash of the public key.\par
+
+        \begin{equation}
+            P=[m]G
+        \end{equation}
+
+        Elliptic Curve Digital Signature Algorithm (ECDSA) is used to create a digital signature of data that uses elliptic curve cryptography. ECDSA isn't used to encrypt any data, it makes sure that the data was not tampered with. In the Ethereum blockchain, it used to prove ownership of an address without revealing private key. Initialy, \par
+        After signing data using ECDSA through private key, the digital signature consists of three values: \(r, s, v\). \(r\) and \(s\) are outputs of an ECDSA signature, and \(v\) means recover id that used to recover signed message. \par
 
 \newpage
 \section{MetaMask}
@@ -22,10 +33,6 @@ Regarding the architecture of Dapp, Figure~\ref{fig:architecture_of_dapp} shows 
 \end{figure}
 
 \newpage
-
-\section{ECDSA}
-Elliptic Curve Digital Signature Algorithm (ECDSA) is used to create a digital signature of data and verify its authenticity without revealing personal information. ECDSA does not encrypt the data, it makes sure that the data was not tampered with.\par
-- ECDSA/RSA comparison
 
 \section{OAuth}
 - OAuth 2.0 flow and explain

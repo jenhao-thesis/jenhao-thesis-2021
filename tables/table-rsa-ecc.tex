@@ -1,0 +1,18 @@
+\begin{table}[h]
+     \centering
+     % [] 顯示在 list of tables 的文字
+     % {} 顯示在表格上方的文字
+     \caption[Comparison between RSA and ECC]{Comparison between RSA and ECC}
+     \label{table:rsa-ecc}
+     \begin{tabular}{lll}
+     \toprule[1.1pt]
+                   Algorithm   & RSA   & ECC\\
+     \midrule[1.1pt]
+     \multirow{1}{*}{Key size} & 3072-bits  & 256-bits\\
+                 (same security level) & & \\
+     \midrule
+     \multirow{2}{*}{Pros} & support encryption     & smaller key size\\
+                           &      & faster execution time\\
+     \bottomrule[1.1pt]
+     \end{tabular}
+     \end{table}
