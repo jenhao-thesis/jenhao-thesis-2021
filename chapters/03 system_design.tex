@@ -2,13 +2,16 @@
 \label{chapter:design}
 
 \section{Overview}
+    \input{tables/table-notation.tex}
+    \newpage    
+
     \begin{figure}[htb]
         \centering
         \includegraphics[height=!,width=1\linewidth,keepaspectratio=true]{figures/system_architecture.png}
         \caption{{\footnotesize System Architecture}}
         \label{fig:system_architecture}
     \end{figure}
-    The architecture of our system is given in figure~\ref{fig:system_architecture}. Our proposed system solved the account integration and identity verification. And it can apply to various scenarios which need data sharing and distributed access control management such as open banking, medical records, and academic records. At the initial stage, every organization and TSP get an Ethereum address and its corresponding private key to take part in this ecosystem. They must keep their private key safe, or identity theft may occur.  There are several parties in our system: blockchain network, organization, third-party service provider, and user. The interpretation of these parties is stated as following:\par
+    The architecture of our system is given in figure~\ref{fig:system_architecture}. Our proposed system solved the account integration and identity verification. And it can apply to various scenarios which need data sharing and distributed access control management such as open banking, medical records, and academic records. At the initial stage, every organization and TSP get an Ethereum address and its corresponding private key to take part in this ecosystem. They must keep their private key safe; otherwise, organization identity theft may occur.  There are several parties in our system: blockchain network, organization, third-party service provider, and user. The interpretation of these parties is stated as following:\par
 
     \begin{itemize}
         \item \textbf{Blockchain network:} The Ethereum blockchain network is responsible for the user's digital identity and access control management through smart contracts, including identity creation and storage. There have two kinds of contracts to realize that account integration and access manager, detailed in Sect.~\ref{chapter:implementation}.  
@@ -30,6 +33,40 @@
     
 \section{Workflow} \label{ssec:workflow}
     \subsection{Identity verification}
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[height=!,width=0.8\linewidth,keepaspectratio=true]{figures/identity_verification.png}
+        \caption{{\footnotesize Identity verification flow}}
+        \label{fig:identityVerification}
+    \end{figure}
+
+
+    \newpage
     \subsection{Account binding}
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[height=!,width=0.8\linewidth,keepaspectratio=true]{figures/account_binding.png}
+        \caption{{\footnotesize Account binding flow}}
+        \label{fig:accountBinding}
+    \end{figure}
+
+    \newpage
     \subsection{Third-party login with Ethereum account}
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[height=!,width=0.8\linewidth,keepaspectratio=true]{figures/Third_party_login.png}
+        \caption{{\footnotesize Third-party login flow}}
+        \label{fig:thirdPartyLogin}
+    \end{figure}
+
+
+    \newpage
     \subsection{Data sharing}
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[height=!,width=1\linewidth,keepaspectratio=true]{figures/data_sharing.png}
+        \caption{{\footnotesize Date Sharing flow}}
+        \label{fig:dataSharing}
+    \end{figure}
+
+    \newpage

@@ -2,21 +2,39 @@
     \centering
     % [] 顯示在 list of tables 的文字
     % {} 顯示在表格上方的文字
-    \caption[Notation]{Notation}
+    \caption[Notations]{Notations}
     \label{table:notation}
     \begin{tabular}{lll}
     \toprule[1.1pt]
-                  Notations   & Description\\
+    Notation   & Description\\
     \midrule[1.1pt]
-    \multirow{1}{*}{Key size} & 3072-bits\\
+    \multirow{1}{*}{\(C_i\)} & Customer / User\\
     \midrule
-    \multirow{1}{*}{Key size} & 3072-bits\\
+    \multirow{1}{*}{\(Org_i\)} & Organization\\
     \midrule
-    \multirow{1}{*}{Key size} & 3072-bits\\
+    \multirow{1}{*}{\(FR\)} & Financial Regulation\\
     \midrule
-    \multirow{1}{*}{Key size} & 3072-bits\\
+    \multirow{1}{*}{\(D_{ij}\)} & Data of \(C_i\) in \(Org_j\)\\
     \midrule
-    \multirow{1}{*}{Pros} & support encryption\\
+    \multirow{1}{*}{\({TSP}_i\)} & Third-party Service Provider\\
+    \midrule
+    \multirow{1}{*}{\({Acc}_{ij}\)} & \(Org_j\) Account of \(C_i\)\\
+    \midrule
+    \multirow{1}{*}{\({ID}_i\)} & Identification card number of \(C_i\)\\
+    \midrule
+    \multirow{1}{*}{\({Add}_i\)} & Ethereum address of i\\
+    \midrule
+    \multirow{1}{*}{\({Pri}_i\)} & Private key of \({Add}_i\)\\
+    \midrule
+    \multirow{1}{*}{\({DI}_i\)} & Digital Identity of \(C_i\)\\
+    \midrule
+    \multirow{1}{*}{\({R}_{ijk}\)} & Access right of \({TSP}_i\) to access \({Org}_j\) with \(C_k\) consent\\
+    \midrule
+    \multirow{1}{*}{\({ACMgr}_i\)} & Access Control Manager contract of \(C_i\) \\
+    \midrule
+    \multirow{1}{*}{\({OMgr}\)} & Organization contract \\
+    \midrule
+    \multirow{1}{*}{\({N}\)} & Nonce \\
     \bottomrule[1.1pt]
     \end{tabular}
     \end{table}
