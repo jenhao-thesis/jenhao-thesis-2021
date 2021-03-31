@@ -1,0 +1,22 @@
+\begin{table}[h]
+    \centering
+    % [] 顯示在 list of tables 的文字
+    % {} 顯示在表格上方的文字
+    \caption[Sign-up form used in each organization]{Sign-up form used in each organization}
+    \label{table:signup}
+    \begin{tabular}{lll}
+    \toprule[1.1pt]
+    Fields   & Description & required\\
+    \midrule[1.1pt]
+    \multirow{1}{*}{username} & Username as login account & Yes\\
+    \midrule
+    \multirow{1}{*}{password} & The password of the account & Yes \\
+    \midrule
+    \multirow{1}{*}{email} & User's email & No \\
+    \midrule
+    \multirow{1}{*}{phone} & User's phone & No \\
+    \midrule
+    \multirow{1}{*}{id card number} & Identification card number & No \\
+    \bottomrule[1.1pt]
+    \end{tabular}
+    \end{table}
