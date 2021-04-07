@@ -48,8 +48,10 @@
         \caption{{\footnotesize Account creation flow}}
         \label{fig:accountCreation}
     \end{figure}
-    User registration is commonly used by many companies or any online service which record user data. Although in recent years there has been an increase in social login, the sign-up for social media is still necessary. Figure~\ref{fig:accountCreation} shows the flow for the user who visits the application (e.g., website of a bank) completes a signup form as shown in Table~\ref{table:signup}. The identification card number of the form is especially important for identity because it can be used to establish a digital identity on the blockchain. In this paper, we assume every organization should have its own membership software such as LDAP . And every user has multiple accounts, their personal information and data generated through organization service are belong to the organization themself.
+    User registration is commonly used by many companies or any online service which record user data. Although in recent years there has been an increase in social login, the sign-up for social media is still necessary. Figure~\ref{fig:accountCreation} shows the flow for the user who visits the application (e.g., bank's website) and completes a signup form as shown in Table~\ref{table:signup}. The identification card number of the form is especially important for identity because it can be used to establish a digital identity on the blockchain. In this paper, we assume every organization should have its own membership software such as LDAP . And every user has multiple accounts, their personal information and data generated through organization service are belong to the organization themself.\par
+    Customers should remember their username and password pairs for different sites. The username of the form is the account \(Acc\) for log in to \(Org_j\), many real-world applications already adopt this scheme to build their membership system. An individual customer \(C_i\) of the real world usually has many accounts \(\{Acc_{i1}, Acc_{i2}, ..., Acc_{in}\}\), those accounts are independent of each other under the current ecosystem.\par
     \input{tables/table-form.tex}
+
     \begin{figure}[htb]
         \centering
         \includegraphics[height=!,width=0.8\linewidth,keepaspectratio=true]{figures/identity_verification.png}
@@ -57,7 +59,7 @@
         \label{fig:identityVerification}
     \end{figure}
     
-
+    
 
     \newpage
     \subsection{Account binding}
