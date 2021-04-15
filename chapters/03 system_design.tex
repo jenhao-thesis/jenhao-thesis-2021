@@ -63,7 +63,7 @@
     \end{figure}
     Figure~\ref{fig:identityVerification} shows the flow that an individual customer applies for real-name authentication. Participating in existing blockchain-based open banking ecosystems requires real-name authentication in order to prevent identity theft and avoid duplicate data. \par
     In the first step, every user who wants to enable blockchain-based functionality carries their own personal identification card. After verifying by the staff of the bank, the \(ID_i\) will be submitted to blockchain by invoking \(OMgr\)'s function, and then update the user's account status for pass authentication.\par
-    In this paper, we assume that organizations or banks are trustworthy, they won't submit fake information. But if they are the malicious attacker, they only submit the wrong \(ID_i\) and create an empty \(DI_i\) on blockchain without harming the user or revealing personal data.
+    In this paper, we assume that organizations or banks are trustworthy, they won't submit fake information. But if they are the malicious attacker, they only submit the wrong \(ID_i\) and create an empty \(DI_i\) on blockchain without harming the user's right or revealing personal data.
 
     \newpage
     \subsection{Account binding}
@@ -73,6 +73,8 @@
         \caption{{\footnotesize Account binding flow}}
         \label{fig:accountBinding}
     \end{figure}
+
+    After \(C_i\) sign in with \(Org_i\) and pass identity verification, 
 
     \newpage
     \subsection{Third-party login with Ethereum account}
