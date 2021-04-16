@@ -74,7 +74,7 @@
         \label{fig:accountBinding}
     \end{figure}
 
-    After \(C_i\) sign in with \(Org_i\) and pass identity verification, 
+    In the account binding process, the user must log in with user's \(Acc\) first and apply for identity verification in person. If users intend to enable third party service, they are required to get a private key and its corresponding Ethereum address. Users can generate their private keys by using MetaMask~\cite{metamask} and store recovery key (seed) in safe location. MetaMask guarantees user's information safety, it won't collect any private keys, addresses, balance and personal information. After retrieving the private key and Ethereum address, users can submit its Ethereum address to the \(Org_i\) server, then the \(Org_i\) check if the address is valid using the smart contract function. Finally, \(Org_i\) triggers the binding process and creates a new job to subscribe to the specific event with a transaction hash. After adding a block of transactions to blockchain, this job will add hashed \(DI_i\) to the status of \(Acc_i\).
 
     \newpage
     \subsection{Third-party login with Ethereum account}
