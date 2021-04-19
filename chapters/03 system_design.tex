@@ -74,7 +74,8 @@
         \label{fig:accountBinding}
     \end{figure}
 
-    In the account binding process, the user must log in with user's \(Acc\) first and apply for identity verification in person. If users intend to enable third party service, they are required to get a private key and its corresponding Ethereum address. Users can generate their private keys by using MetaMask~\cite{metamask} and store recovery key (seed) in safe location. MetaMask guarantees user's information safety, it won't collect any private keys, addresses, balance and personal information. After retrieving the private key and Ethereum address, users can submit its Ethereum address to the \(Org_i\) server, then the \(Org_i\) check if the address is valid using the smart contract function. Finally, \(Org_i\) triggers the binding process and creates a new job to subscribe to the specific event with a transaction hash. After adding a block of transactions to blockchain, this job will add hashed \(DI_i\) to the status of \(Acc_i\).
+    In the account binding process, the user must log in with user's \(Acc\) first and apply for identity verification in person. If users intend to enable third party service, they are required to get a private key and its corresponding Ethereum address. Users can generate their private keys by using MetaMask~\cite{metamask} and store recovery key (seed) in safe location. MetaMask guarantees user's information safety, it won't collect any private keys, addresses, balance and personal information. After retrieving the private key and Ethereum address, users can submit its Ethereum address to the \(Org_i\) server, then the \(Org_i\) check if the address is valid using the smart contract function. Finally, \(Org_i\) triggers the binding process and creates a new job to subscribe to the specific event with a transaction hash. After adding a block of transactions to blockchain, this job will add hashed \(ID_i\) to the status of \(Acc_i\).\par
+    Through executing the above process flow, the user identity verification will be confirmed by the bank and the \(DI_i\) will be created by blockchain. After binding Acc with the Ethererum address, users can manage all data access right themself. This process not only enables distributed access control but also enables third-party login.
 
     \newpage
     \subsection{Third-party login with Ethereum account}
@@ -85,7 +86,12 @@
         \label{fig:thirdPartyLogin}
     \end{figure}
 
-
+    In the frontend user-agent, the user utilizes an Ethereum account to retrieve their \(DI_i\) from the blockchain without through a centralized server such as an organization, bank. Then the user signs this \(DI_i\) with MetaMask to generate a digital signature for proof of identity. After that, the server-side validate the authenticity and integrity of this digital signature. Additionally, the server-side also retrieve \(DI_i\) from the blockchain to confirm that the mapping of the Ethereum account and the specific \(DI_i\).
+    \par
+    The organization in our framework is regarded as service provider with and without the functionality of membership software. In our proposed ecosystem, every organization should support blockchain-based third-party login. For example, if users have enabled the functionality of blockchain, users can use their Ethereum account to log in to any service providers instead of \(Acc_i\) account and password.
+    \par 
+    The proposed framework supports two kinds of login mechanisms: (1) Regular account login: The user enters the account and password to log in system. The user behavior will not be affected if the user doesn't have Ethereum account. (2) Blockchain-based third-party login: The user can install MetaMask extension then choose third-party login with MetaMask, the server-side will retrieve the corresponding \(Acc\) or create a new one if the user never ever log in.
+      
     \newpage
     \subsection{Data sharing}
     \begin{figure}[htb]
