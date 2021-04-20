@@ -11,7 +11,7 @@
         \caption{{\footnotesize System Architecture}}
         \label{fig:system_architecture}
     \end{figure}
-    The architecture of our system is given in figure~\ref{fig:system_architecture}. Our proposed system solved the account integration and identity verification. And it can apply to various scenarios which need data sharing and distributed access control management such as open banking, medical records, and academic records. At the initial stage, each \(Org\) or \(TSP\) gets the exclusive \(Add\) and the corresponding \(Pri\) to take part in our open banking ecosystem. They must put the safety of \(Pri\) first and be careful; otherwise, identity theft may occur. Our system employs the hash algorithm Keccak-256 to hash \(C_i\)'s identity information, i.e., \(ID_i\). This system reocrds the hash value in the blockchain to represent \(C_i\)'s identity instead of storing \(ID_i\). There are several parties in our system: blockchain network, organization, third-party service provider, and user. The interpretation of these parties is stated as following:\par
+    The architecture of our system is given in figure~\ref{fig:system_architecture}. Our proposed system solved the account integration and identity verification. And it can apply to various scenarios which need data sharing and distributed access control management such as open banking, medical records, and academic records. At the initial stage, each \(Org\) or \(TSP\) gets the exclusive \(Add\) and the corresponding \(Pri\) to take part in our open banking ecosystem. They must put the safety of \(Pri\) first and be careful; otherwise, identity theft may occur. Our system employs the hash algorithm Keccak-256 to hash \(C_i\)'s identity information, i.e., \(ID_i\). This system records the hash value in the blockchain to represent \(C_i\)'s identity instead of storing \(ID_i\). There are several parties in our system: blockchain network, organization, third-party service provider, and user. The interpretation of these parties is stated as following:\par
 
     \begin{itemize}
         \item \textbf{Blockchain network:} The Ethereum blockchain network is used to store the user's \(DI\) and data access rights and deploy smart contracts, including identity creation and storage. Every node on blockchain has a copy of the ledger and ensures data on the blockchain cannot be tampered with. With decentralized technology, the management of data access rights doesn't have any governing authority to monitor. There have two kinds of contracts to realize that account integration and access manager, detailed in Sect.~\ref{chapter:implementation}.  
@@ -86,7 +86,9 @@
         \label{fig:accountunBinding}
     \end{figure}
 
-    Figure~\ref{fig:accountunBinding} presents that an individual customer triggers unbinding account process. 
+    Figure~\ref{fig:accountunBinding} presents that an individual user triggers unbinding account process. To disconnecting a users' \(DI\) from their \(Add\), the unbinding request will be sent to the \(RA\) that is recognized as an impartial third party. If users lose \(Add\)'s private key or intend to bind another \(Add\), they should prepare a new \(Add\) in advance and bring their identity document to \(RA\) to change their binding status.
+    \par 
+    With this unbinding mechanism, it brings a convenient way to reset and prevent unauthorized transmission of data. Once this process executes successfully and the new mapping is strictly written into the block, the previous address will become invalid for login or any operations. The \(ACMgr\) that the previous address managed stored in the blockchain permanently, and no one can remove this contract except it implements self-destruct function. Even though we can't remove this contract from the blockchain, the attacker is nothing to do. This contract only stores access rights and data attribute names, it is always public.
 
     \newpage
 
@@ -113,4 +115,6 @@
         \label{fig:dataSharing}
     \end{figure}
 
+    The first step of this Figure~\ref{fig:dataSharing} shows that \(C_i\) authorize \(Org_A\) the access right to access the personal information stored in \(Org_B\). Any organizations are not involved in this authorization process, because web3.js library allows us to interact with the blockchain through the user-agent browser. The remaining steps are challenge-response authentication for obtaining an access token, one organization presents \(N\) and another organization must provide a valid signature, i.e., using private key to hash the specific \(N\). Thus, the organization which obtains access token can access user's data without authenticating again.
+    
     \newpage
