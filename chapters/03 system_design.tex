@@ -11,7 +11,7 @@
         \caption{{\footnotesize System Architecture}}
         \label{fig:system_architecture}
     \end{figure}
-    The architecture of our system is given in figure~\ref{fig:system_architecture}. Our proposed system solved the account integration and identity verification. And it can apply to various scenarios which need data sharing and distributed access control management such as open banking, medical records, and academic records. At the initial stage, each \(Org\) or \(TSP\) gets the exclusive \(Add\) and the corresponding \(Pri\) to take part in our open banking ecosystem. They must put the safety of \(Pri\) first and be careful; otherwise, identity theft may occur. There are several parties in our system: blockchain network, organization, third-party service provider, and user. The interpretation of these parties is stated as following:\par
+    The architecture of our system is given in figure~\ref{fig:system_architecture}. Our proposed system solved the account integration and identity verification. And it can apply to various scenarios which need data sharing and distributed access control management such as open banking, medical records, and academic records. At the initial stage, each \(Org\) or \(TSP\) gets the exclusive \(Add\) and the corresponding \(Pri\) to take part in our open banking ecosystem. They must put the safety of \(Pri\) first and be careful; otherwise, identity theft may occur. Our system employs the hash algorithm Keccak-256 to hash \(C_i\)'s identity information, i.e., \(ID_i\). This system reocrds the hash value in the blockchain to represent \(C_i\)'s identity instead of storing \(ID_i\). There are several parties in our system: blockchain network, organization, third-party service provider, and user. The interpretation of these parties is stated as following:\par
 
     \begin{itemize}
         \item \textbf{Blockchain network:} The Ethereum blockchain network is used to store the user's \(DI\) and data access rights and deploy smart contracts, including identity creation and storage. Every node on blockchain has a copy of the ledger and ensures data on the blockchain cannot be tampered with. With decentralized technology, the management of data access rights doesn't have any governing authority to monitor. There have two kinds of contracts to realize that account integration and access manager, detailed in Sect.~\ref{chapter:implementation}.  
@@ -86,7 +86,7 @@
         \label{fig:accountunBinding}
     \end{figure}
 
-    Figure~\ref{fig:accountunBinding} presents that an individual customer applies for unbinding account process. 
+    Figure~\ref{fig:accountunBinding} presents that an individual customer triggers unbinding account process. 
 
     \newpage
 
