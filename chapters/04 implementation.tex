@@ -1,6 +1,6 @@
 \chapter{Implementation} 
 \label{chapter:implementation}
-This chapter describes the implementation of Ethereum blockchain smart contracts and defines relationships between users and organizations. 
+This chapter describes the design of smart contracts and provides the detailed implementation of each function that is adopted in this paper. The smart contract diagram as shown in Figure~\ref{fig:smart_contract_diagram},  all of the organizations have common \(OMgr\) for managing users' information and storing users' status. The ecosystem initiator enables blockchain-based functionality by deploying a \(OMgr\). It offers application binary interface (ABI) files for all participants to easily call smart contract functions.
 
 \begin{figure}[hb]
     \centering
@@ -10,8 +10,11 @@ This chapter describes the implementation of Ethereum blockchain smart contracts
 \end{figure}
 \section{Smart contract design}
 \subsection*{Organization Manager}
-Each organization manages mapping of user and orgs.
-// data structure
+The \(OMgr\) is used to manage information that is related to users and organizations, i.e., it records data attributes, users' identity hash value. In Table~\ref{table:userinfo}, the \textit{UserInfo} structure represents an independent \(DI\). After the identity verification process is done as shown in Figure~\ref{fig:identityVerification}, the \(DI\) will be created for users automatically.
+
+
+\input{tables/table-userinfo}
+
 \subsection*{Access Manager}
 Each user manages access control list of data.
 // data structure
