@@ -12,8 +12,17 @@ This chapter describes the design of smart contracts and provides the detailed i
 \subsection*{Organization Manager}
 The \(OMgr\) is used to manage information that is related to users and organizations, i.e., it records data attributes, users' identity hash value. In Table~\ref{table:userinfo}, the \textit{UserInfo} structure represents an independent \(DI\). After the identity verification process is done as shown in Figure~\ref{fig:identityVerification}, the \(DI\) will be created for users automatically.
 
-
 \input{tables/table-userinfo}
+
+This smart contract provides several functions to create user identity, bind account with Ethereum address, and create exclusive \(ACMgr\) for the user. And it also defines events in order that the smart contract can emit events to record logs on the block. That enables traceability of identity creation processes. The most important functions we used in \(OMgr\) are \textit{addUser}, \textit{bindAccount} and only the legitimate organizations are able to trigger these functions.\par 
+The function \textit{addUser}
+
+\begin{figure}[hb]
+    \centering
+    \includegraphics[height=!,width=0.8\linewidth,keepaspectratio=true]{figures/smart_contract_deployment.png}
+    \caption{{\footnotesize The relation between smart contracts}}
+    \label{fig:smart_contract_deployment}
+\end{figure}
 
 \subsection*{Access Manager}
 Each user manages access control list of data.

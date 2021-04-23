@@ -1,0 +1,30 @@
+\begin{table}[h]
+    \centering
+    % [] 顯示在 list of tables 的文字
+    % {} 顯示在表格上方的文字
+    \caption[Gas consumption]{Gas consumption}
+    \label{table:gasUsed}
+    \begin{tabular}{p{45mm}p{30mm}}
+    \toprule[1.1pt]
+    Function/Contract   & Gas used\\
+    \midrule[1.1pt]
+    \multirow{1}{*}{AddUser-create} & 97574\\
+    \midrule
+    \multirow{1}{*}{AddUser-append} & 36435\\
+    \midrule
+    \multirow{1}{*}{Bind} & 1390534\\
+    \midrule
+    \multirow{1}{*}{Authorize} & 49263\\
+    \midrule
+    \multirow{1}{*}{Revoke} & 19284\\
+    \midrule
+    \multirow{1}{*}{Authorize-all} & 46580\\    
+    \midrule
+    \multirow{1}{*}{Revoke-all} & 16625\\
+    \midrule
+    \multirow{1}{*}{New $Omgr$} & 4494629\\
+    \midrule
+    \multirow{1}{*}{New $ACMgr$} & 1660077\\    
+    \bottomrule[1.1pt]
+    \end{tabular}
+    \end{table}
