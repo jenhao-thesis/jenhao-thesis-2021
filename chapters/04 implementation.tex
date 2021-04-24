@@ -15,7 +15,7 @@ The \(OMgr\) is used to manage information that is related to users and organiza
 \input{tables/table-userinfo}
 
 This smart contract provides several functions to create user identity, bind account with Ethereum address, and create exclusive \(ACMgr\) for the user. And it also defines events in order that the smart contract can emit events to record logs on the block. That enables traceability of identity creation processes. The most important functions we used in \(OMgr\) are \textit{addUser}, \textit{bindAccount} and only the legitimate organizations are able to trigger these functions.\par 
-The function \textit{addUser}
+The function \textit{addUser} is invoked after finishing identity verification, then the \(OMgr\) 
 
 \begin{figure}[hb]
     \centering
