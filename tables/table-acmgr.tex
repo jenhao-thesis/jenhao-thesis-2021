@@ -1,0 +1,16 @@
+\begin{table}[h]
+    \centering
+    % [] 顯示在 list of tables 的文字
+    % {} 顯示在表格上方的文字
+    \caption[Table of access right structure]{Table of access right structure}
+    \label{table:accessStruct}
+    \begin{tabular}{llll}
+    \toprule[1.1pt]
+                  Variable & Type & Mode\\
+    \midrule[1.1pt]
+    \multirow{1}{*}{\textit{accessAuthority}} & mapping(string=>mapping(address=>mapping(address=>bool))) & Mode 1\\ 
+    \midrule
+    \multirow{1}{*}{\textit{oneApproved}} & mapping(string=>bool) & Mode 2\\
+    \bottomrule[1.1pt]
+    \end{tabular}
+    \end{table}

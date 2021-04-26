@@ -10,25 +10,43 @@ This chapter describes the design of smart contracts and provides the detailed i
 \end{figure}
 \section{Smart contract design}
 \subsection*{Organization Manager}
-The \(OMgr\) is used to manage information that is related to users and organizations, i.e., it records data attributes, users' identity hash value. In Table~\ref{table:userinfo}, the \textit{UserInfo} structure represents an independent \(DI\). After the identity verification process is done as shown in Figure~\ref{fig:identityVerification}, the \(DI\) will be created for users automatically.
+The \(OMgr\) is used to manage information that is related to users and organizations, i.e., it records data attributes, users' identity hash value. In Table~\ref{table:userinfo}, the \textit{UserInfo} structure represents an independent \(DI\). After the identity verification process is done as shown in Figure~\ref{fig:identityVerification}, the \(DI\) will be created for users automatically.\par
+Because every organization has one key pair for determined their identity, we can retrieve their address from the private key and then append these addresses to the variable \(org\) in \(OMgr\).\par
 
 \input{tables/table-userinfo}
 
-This smart contract provides several functions to create user identity, bind account with Ethereum address, and create exclusive \(ACMgr\) for the user. And it also defines events in order that the smart contract can emit events to record logs on the block. That enables traceability of identity creation processes. The most important functions we used in \(OMgr\) are \textit{addUser}, \textit{bindAccount} and only the legitimate organizations are able to trigger these functions.\par 
-The function \textit{addUser} is invoked after finishing identity verification, the \(OMgr\) check whether the \(ID\) exist on the blockchain. Then if the \(ID\) is new one, the \(OMgr\) will create \textit{UserInfo} for users. Otherwise, the \(OMgr\) will append the address of \(Org\) who triggers this function to the variable \textit{orgs} in \textit{UserInfo}.
+This smart contract provides functions to create user identity, bind account with Ethereum address, and create exclusive \(ACMgr\) for the user as shown in Figure~\ref{fig:smart_contract_deployment}. And it also defines events in order that the smart contract can emit events to record logs on the block. That enables traceability of identity creation processes. The most important functions we used in \(OMgr\) are \textit{addUser}, \textit{bindAccount} and only the legitimate organizations are able to trigger these functions.\par 
+The function \textit{addUser} is invoked after finishing identity verification, the \(OMgr\) check whether the \(ID\) exist on the blockchain. Then if the \(ID\) is new one, the \(OMgr\) will create \textit{UserInfo} for users. Otherwise, the \(OMgr\) will append the address of \(Org\) who triggers this function to the variable \textit{orgs} in \textit{UserInfo}.\par 
+The function \textit{bindAccount} is used to bind user's \(DI\) to Ethereum address. So that every contract \(ACMgr\) will record organizations which the user has registered. One \(DI\) only corresponds to one Ethereum address,  to establish a contract for storing access right.\par 
 
-\begin{figure}[hb]
+\subsection*{Access Manager}
+After binding to address, contract \(ACMgr\) will be created and its owner belongs to users, i.e., the user has full right to manage its contract and authorize access right to any legitimate organization. And users have a full right to make their choice as to whether or not to allow personal data opened. This contract uses two mappings to store access right in the form of key and value pairs where every key is unique. These keys represent attribute names that \(RA\) approves and submits. It is necessary to formulate data attributes for users and organizations by \(RA\) because financial data attributes will update dynamically and only \(RA\) can update these attributes. For example, the Financial Supervisory Commission (FSC) was in charge of the development, supervision, regulation, and examination of financial services in Taiwan.
+
+\begin{figure}[htb]
     \centering
     \includegraphics[height=!,width=0.8\linewidth,keepaspectratio=true]{figures/smart_contract_deployment.png}
     \caption{{\footnotesize The relation between smart contracts}}
     \label{fig:smart_contract_deployment}
 \end{figure}
+For the purpose of delivering a better user experience, we designed two access authorization modes for access personal data. If the \(C_N\) want to allow \(TSP\) to access the data from all \(Org\) ($Bank$), the \(C_N\) needs to authorize access many times due to one on one authorization, it is called Mode 1 as shown in Table~\ref{table:accessStruct}. Another mode is one-to-many, the user only needs to select the attribute name that the user wants to share. Afterward, all the legitimate banks will accept any data request from \(TSP\)  against the selected attribute.
+\input{tables/table-acmgr.tex}
 
-\subsection*{Access Manager}
-Each user manages access control list of data.
-// data structure
+\newpage
 
 \section{Third Party Login}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=!,width=1\linewidth,keepaspectratio=true]{figures/traditional_decentralized.png}
+    \caption{{\footnotesize Traditional vs. Decentralized login}}
+    \label{fig:traditional_decentralized}
+\end{figure}
+
+In contrast to traditional login as shown in Figure~\ref{fig:traditional_decentralized}, the user can log in to other organizations with decentralized login and it doesn't need to remember any password, because the unique \(DI\) store on blockchain and the server can verify the user's identity by validating the signature that the user sign its hashed \(ID\).\par
+Our framework supports both of login mechanisms and utilizes hashed \(ID\) as the primary key to restoring user account information that the user stores on the LDAP server. Before binding account, the hashed \(ID\) doesn't establish yet and leave the hashed field empty.\par 
+To begin this decentralized login process, the client should install the MetaMask extension on Chrome browser and import existed private key or register a new one. The first step in this process was to use \textit{call} function to view the user's hashed \(ID\) from blockchain. The second step was to sign the hashed \(ID\) by the user's private key using ECDSA. The final step was confirm with blockchain by server and then retrieve user account information.
+
+\newpage
 \section{Integration Account}
 \section{Data Sharing}
 \section{Token design}

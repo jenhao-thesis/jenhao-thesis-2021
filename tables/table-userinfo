@@ -8,13 +8,13 @@
      \toprule[1.1pt]
                    Variable & Type & Description\\
      \midrule[1.1pt]
-     lastModify                    & address   & \begin{tabular}[c]{@{}l@{}} Address of last organization that\\ verifies the user\end{tabular}\\                                
+     \textit{lastModify}     & address   & \begin{tabular}[c]{@{}l@{}} Address of last organization that\\ verifies the user\end{tabular}\\                                
      \midrule
-     \multirow{1}{*}{orgs} & mapping(address==>bool) & Organization's mapping\\
+     \multirow{1}{*}{\textit{orgs}} & mapping(address==>bool) & Organization's mapping\\
      \midrule
-     \multirow{1}{*}{userAddress} & address & Corresponding Ethereum address\\
+     \multirow{1}{*}{\textit{userAddress}} & address & Corresponding Ethereum address\\
      \midrule
-     \multirow{1}{*}{accessManagerAddress} & address & Address of $ACMgr_i$ contract\\          
+     \multirow{1}{*}{\textit{accessManagerAddress}} & address & Address of $ACMgr_i$ contract\\          
      \bottomrule[1.1pt]
      \end{tabular}
      \end{table}
