@@ -16,12 +16,12 @@
     \begin{itemize}
         \item \textbf{Blockchain network:} The Ethereum blockchain network is used to store the user's \(DI\) and data access rights and deploy smart contracts, including identity creation and storage. Every node on blockchain has a copy of the ledger and ensures data on the blockchain cannot be tampered with. With decentralized technology, the management of data access rights doesn't have any governing authority to monitor. There have two kinds of contracts to realize that account integration and access manager, detailed in Sect.~\ref{chapter:implementation}.  
         \item \textbf{Organization:} A set of organizations within an ecosystem, identified by the \(Add\) and IP addresses. Each organization represents an independent system, it owns membership software that provides an organization with functionality such as storing and editing member information. The organization not only provides services to customers depend on applications, but also collects user data by using a database. In this paper, organizations provide an interface that users decide to share data.
-        \begin{itemize}
+        \begin{itemize}[noitemsep]
             \item $DB_j = \{D_{1j}, D_{2j}, ..., D_{nj}\}$: Database of $Org_j$ is used to store customer data and only owner of data can decide which $TSP$ can access. 
             \item Because the organization $Org_j$ maintains membership software, it will provide the user $C_i$ a regular account $Acc_{ij}$. In the appilcation of $Org_j$, the user $C_i$ can access their data $D_{ij}$.
         \end{itemize}
         \item \textbf{Third-party service provider:} The third-party service provider can be any organization or entity that performs financial services to customer. In this paper, we assume that TSP doesn't manage membership software and they retrieve customer data through blockchain technology.
-        \begin{itemize}
+        \begin{itemize}[noitemsep]
             \item The aim of the $TSP$ is for collect data of $C_i$ from organizations $\{Org_1, Org_2, ..., Org_n\}$ if the organization owns the data of $C_i$ and $TSP$ gets the permission.
             \item When the permission is revoked by triggering smart contract, the access data request is regarded as invalid even if the token exists and it is not out of date.
         \end{itemize}
