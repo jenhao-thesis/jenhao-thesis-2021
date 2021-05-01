@@ -56,12 +56,23 @@ In order to effectively perform account integration without a single authority e
     \item One of the organizations creates DI using a hash algorithm Keccak-256  on blockchain as \(C_i\) passes real-name authentication, the others append their organization address to the same DI.
     \item After establishing an identity, the \(C_i\) will propose an account binding request when the \(C_i\) wants to participant in this ecosystem.
     \item One organization that the \(C_i\) registers with receives this request and then creates a transaction signed by its organization's private key to bind these accounts to the Ethereum address that the \(C_i\) specify. 
-    \item Finally, the \(C_i\) can use their address to sign in or sign up for organizations whin this ecosystem.
+    \item Afterward, the \(C_i\) can use the bound address to sign in or sign up for organizations within this ecosystem.
 \end{enumerate}
 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=!,width=1\linewidth,keepaspectratio=true]{figures/account_integration.png}
+    \caption{{\footnotesize Account integration}}
+    \label{fig:account_integration}
+\end{figure}
 
+As the Figure~\ref{fig:account_integration} shows a scenario, where a user uses the bound address to find an organization account for sign-in organization's service.  This account integration has brought benefits to users such as ease of management, sign-up without additional registration, as well as no more information to be revealed to the public.
+
+\newpage
 \section{Data Sharing}
+
+
+\newpage
+
 \section{Token design}
-// jwt format(including iss, sub, hashed)
-\section{Data privacy protection}
-// which data will be save in BC and in DB.
+\input{tables/table-jwt.tex}

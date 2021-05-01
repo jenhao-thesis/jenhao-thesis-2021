@@ -1,0 +1,25 @@
+\begin{table}[h]
+    \centering
+    % [] 顯示在 list of tables 的文字
+    % {} 顯示在表格上方的文字
+    \caption[JWT claims used in our system]{JWT claims used in our system}
+    \label{table:jwt}
+    \begin{tabular}{lll}
+    \toprule[1.1pt]
+                  Name & Type & Semantics\\
+    \midrule[1.1pt]
+    \textit{hashed}     & byte32   &  The hash value of user's \(ID\). For example,\\
+    & & 0xfc043e80768cb3034a508ca5e0e256c5c72aad2642771f18b795f774fb4c945c \\
+    \midrule
+    \multirow{1}{*}{\textit{iat}} & timestamp & The time at which the JWT was issued.\\
+    \midrule
+    \multirow{1}{*}{\textit{exp}} & timestamp  & The expiration time of the JWT\\
+    \midrule
+    \multirow{1}{*}{\textit{iss}} & address & The issuer of the JWT. For example,\\
+    & & 0x1F7F0F7BE634D340EB070F3F3C21B6CE4AB857BD\\      
+    \midrule
+    \multirow{1}{*}{\textit{sub}} & address & The subject of the JWT, i.e., the TSP that will use the JWT. For example,\\
+    & & 0xA3E898C280220BF5FAE9E7E6CEB4F3A6BFA67163\\
+    \bottomrule[1.1pt]
+    \end{tabular}
+    \end{table}
