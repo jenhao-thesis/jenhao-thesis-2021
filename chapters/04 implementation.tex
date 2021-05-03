@@ -70,11 +70,25 @@ As the Figure~\ref{fig:account_integration} shows a scenario, where a user uses 
 
 \newpage
 \section{Data Sharing}
-Since our proposed system needs a secure transmitting mechanism for transmitting users' personal information such as financial data and better performance to reduce network latency that transmission need, the JSON Web Token (JWT) was adopted to verify the owner of JSON data. In our proposed system, the authentication module will allow TSPs to perform challenge response authentication in order to obtain a JWT which allows TSPs to access a specific resource from the organization without authenticating again. Once JWT has been obtained from the organization, the TSP can send a request using the JWT to fetch data
-for a period of time.
+Since our proposed system needs a secure transmitting mechanism for transmitting users' personal information such as financial data and better performance to reduce network latency that transmission need, the JSON Web Token (JWT) was adopted to verify the owner of JSON data. In our proposed system, the authentication module will allow TSPs to perform challenge response authentication in order to obtain a JWT which allows TSPs to access a specific resource from the organization without authenticating again. Once JWT has been obtained from the organization, the TSP can send a request using the JWT to fetch data for a period of time.\par  
+Conventionally, a solution was used to do authentication between client and server, called a session. It is used by the server to maintain the status of the client and the session is stored on the server. Although it may cause performance overhead in the case of large volumes of users by storing much session data on the server's memory, it still works for most applications. Our application has made use of sessions once the user has authenticated, i.e., the user login service.\par
+Although session technology solves authentication issues well, we have different requirements for our data sharing schema. In our scenarios, one application is required to communicate with multiple authentication servers to get corresponding tokens as shown Figure~\ref{fig:jwt_flow}. Specifically, in a single user's data request, the TSP's server should send access token requests many times and keep them in the database for later use (see sample in Figure~\ref{fig:screenshot_database}). \par
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=!,width=1\linewidth,keepaspectratio=true]{figures/screenshot_database.png}
+    \caption{{\footnotesize Screenshot of token databse in TSP}}
+    \label{fig:screenshot_database}
+\end{figure}
 
-
-\newpage
-
-\section{Token design}
+Therefore, instead of using the session for authentication of data sharing, we take advantage of JWT to issue access tokens. The JWT is a self-contained token that has authentication information, expiration time, and other user-defined claims digitally signed. As illustrated in Table~\ref{table:jwt}, each JWT contains these claims for specifying the entity which the TSP wants to query. The \textit{hashed} value is used to identify the data owner thereby the TSP can access the user's data without more detailed information about the user.\par
 \input{tables/table-jwt.tex}
+
+After the user agrees to grant access permission for the TSP via \textit{ACMgr} contract, the user will inform the TSP to send requests to all organizations according to the states of the user's \textit{ACMgr} contract. When the TSP is required to access the user's data, it just reuses this token to fetch data if the JWT doesn't expire. The issuer of the JWT will give a specific expiration instant. In most applications, it is recommended to set it smaller (a few minutes). It will need to balance tradeoffs with performance and security. Although JWT brings us a lot of benefits such as superior performance, portable, decentralized, the drawback of JWT is token revocation. This implies that a JWT that organization issued can be valid even if the user takes back the access permission. In order to overcome this drawback, we enable blockchain technology to verify the token. In addition to verifying tokens by the authentication server, our system also verifies tokens with \textit{ACMgr} contract via a function call. The overhead of a function call of the smart contract will be compared in a later chapter.\par
+\newpage
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=!,width=1\linewidth,keepaspectratio=true]{figures/jwt_flow.png}
+    \caption{{\footnotesize A user send a request for data}}
+    \label{fig:jwt_flow}
+\end{figure}
+The Figure~\ref{fig:jwt_flow} shows that a user sends a request to the server, that will trigger consecutive requests to fetch JWTs. Firstly, the server has to perform authentication until it collects all JWTs. If one of the requests is failed, just ignore the request failure and report it to the user. It won't affect other normal requests. Secondly, the JWTs can be utilized in two modes. In other words, we do not have to create two kinds of JWT for different modes. Because the JWT doesn't contain access right scope or other credential information. 
