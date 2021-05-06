@@ -75,7 +75,7 @@
     \end{figure}
 
     In the account binding process, the user must log in with user's \(Acc\) first and apply for identity verification in person. If users intend to enable third party service, they are required to get a private key and its corresponding Ethereum address. Users can generate their private keys by using MetaMask~\cite{metamask} and store recovery key (seed) in safe location. MetaMask guarantees user's information safety, it won't collect any private keys, addresses, balance and personal information. After retrieving the private key and Ethereum address, users can submit its Ethereum address to the \(Org_i\) server, then the \(Org_i\) check if the address is valid using the smart contract function. Finally, \(Org_i\) triggers the binding process and creates a new job to subscribe to the specific event with a transaction hash. After adding a block of transactions to blockchain, this job will add hashed \(ID_i\) to the status of \(Acc_i\).\par
-    Through executing the above process flow, the user identity verification will be confirmed by the bank and the \(DI_i\) will be created by blockchain. After binding Acc with the Ethererum address, users can manage all data access right themself. This process not only enables distributed access control but also enables third-party login.
+    Through executing the above process flow, the user identity verification will be confirmed by the bank and the \(DI_i\) will be created by blockchain. After binding Acc with the Ethereum address, users can manage all data access right themselves. This process not only enables distributed access control but also enables third-party login.
 
     \newpage
 
@@ -88,7 +88,7 @@
 
     Figure~\ref{fig:accountunBinding} presents that an individual user triggers unbinding account process. To disconnecting a users' \(DI\) from their \(Add\), the unbinding request will be sent to the \(RA\) that is recognized as an impartial third party. If users lose \(Add\)'s private key or intend to bind another \(Add\), they should prepare a new \(Add\) in advance and bring their identity document to \(RA\) to change their binding status.
     \par 
-    With this unbinding mechanism, it brings a convenient way to reset and prevent unauthorized transmission of data. Once this process executes successfully and the new mapping is strictly written into the block, the previous address will become invalid for login or any operations. The \(ACMgr\) that the previous address managed stored in the blockchain permanently, and no one can remove this contract except it implements self-destruct function. Even though we can't remove this contract from the blockchain, the attacker is nothing to do. This contract only stores access rights and data attribute names, it is always public.
+    With this unbinding mechanism, it brings a convenient way to reset and prevent unauthorized transmission of data. Once this process executes successfully and the new mapping is strictly written into the block, the previous address will become invalid for login or any operations. The \(ACMgr\) that the previous address managed stored in the blockchain permanently, and no one can remove this contract except it implements self-destruct function. Even though we can't remove this contract from the blockchain, the attacker is nothing to do. This contract only stores access rights and data attribute names.
 
     \newpage
 
