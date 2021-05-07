@@ -1,0 +1,16 @@
+\begin{table}[h]
+    \centering
+    % [] 顯示在 list of tables 的文字
+    % {} 顯示在表格上方的文字
+    \caption[APIs used in data sharing]{APIs used in data sharing}
+    \label{table:api}
+    \begin{tabular}{llll}
+    \toprule[1.1pt]
+                  Name & Method & Description & Mode\\
+    \midrule[1.1pt]
+    \multirow{1}{*}{/users/protected?acc=\{\textit{ACMgr}\}} & GET & Get the user's deposit value & Mode 1\\
+    \midrule
+    \multirow{1}{*}{/users/protectedInvoice?acc=\{\textit{ACMgr}\}} & GET & Get the user's bill & Mode 2\\
+    \bottomrule[1.1pt]
+    \end{tabular}
+    \end{table}
