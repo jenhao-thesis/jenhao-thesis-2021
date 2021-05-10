@@ -49,11 +49,6 @@
 
 \newpage
 
-\section{OAuth}
-- OAuth 2.0 flow and explain
-
-\newpage
-
 \section{Trust Service Provider (TSP)}
 - Open Banking flow
 - Current TSP in Taiwan
@@ -62,13 +57,24 @@
 \newpage
 
 \section{Related works}
-
+In this section, we will present an overview of the related literature on blockchain-based access control, identity management, data sharing and the Open Banking ecosystem. We don't just point out the differences between previous studies and our research, but we also look at the tradeoff between the access control models.
 \subsection{Identity integration}
+Mudliar \emph{et al.}~\cite{mudliar2018comprehensive} mentioned
+
 \subsection{Access control}
-\subsection{Open banking}
-In this section, we will provide an overview of related literature about blockchain-based access control, identity management, data sharing, and Open Banking ecosystem.\par
-In traditional access control management, the most common solution is PKIs, but it has some concerns about scalability and granularity. Paillisse \emph{et al.}~\cite{paillisse2019distributed} presented a blockchain-based approach to address these problems. They take advantage of blockchain to record and distribute access control policies. Daraghmi \emph{et al.}~\cite{daraghmi2019medchain,daraghmi2019unichain} described a blockchain-based system for electronic medical records and academic records, using blockchain smart contract to manage the data access permissions in a secure and efficient manner. It also uses advanced encryption techniques to safeguard user confidentiality.
-Rouhani \emph{et al.}~\cite{rouhani2020distributed} proposed a distributed Attributed-Base Access Control (ABAC) system that can provide auditing of access attempts. This work has focused on addressing audit and scalability, moreover, they apply the solution to the digital library and improve a lot.
+In traditional access control management, the most common solution is PKIs, but it has some concerns about scalability and granularity. Paillisse \emph{et al.}~\cite{paillisse2019distributed} presented a blockchain-based approach to address these problems. They took advantage of blockchain to record and distribute access control policies. Firstly, they selected Locator/ID Separation Protocol (LISP) to perform access control and modified this protocol for communication with the blockchain. Secondly, an open-source blockchain, the Hyperledger Fabric, was used to refresh access policies in the control plane. Thirdly, they constructed a prototype system and used Group-Based Policy (GBP) for network administrators to specify network configuration.\par
+
+Daraghmi \emph{et al.}~\cite{daraghmi2019medchain,daraghmi2019unichain} described a blockchain-based system for electronic medical records and academic records, using blockchain smart contracts to provide secure and efficient data access while protecting the patients' privacy. These systems enabled the data owner to securely control accesses their records.\par
+
 Fu \emph{et al.}~\cite{fu2020soteria} proposed a user rights management system that aims to protect user privacy through enforcing executable sharing agreement. They also adopted multi-layer blockchain architecture to satisfy CAP (consistency, availability, and partition tolerance) theorem.\par
 
+Rouhani \emph{et al.}~\cite{rouhani2020distributed} proposed a distributed Attributed-Base Access Control (ABAC) system that can provide auditing of access attempts. This work has focused on addressing audibility and scalability. They also applied the blockchain-based solution to the digital library for validation.\par
+
+Guo \emph{et al.}~\cite{guo2019multi} introduced the smart contract technology for multi-authority ABAC. In their proposed architecture, the interactions among data users, data owners, and authorities are built on the blockchain smart contract.\par
+
+In many cases, users must be both authenticated and authorized prior to entering the system. Traditional access control models have resolved the issues. For example, Attributed-Base Access Control (ABAC) utilizes a set of attributes (e.g., user attributes, environmental attributes, and resource attributes) to set permissions; Role-Based Access Control (RBAC) granted access permissions depending on users' role in the organization. Generally, ABAC is a flexible and fine-grained mechanism, but it is more complex and requires well-designed management.\par
+
+In view of all the access control mechanisms mentioned so far, the focus of our research is users' consent and secure authentication and authorization. In the current research, we investigate blockchain technology, access control mechanisms. The challenge arises when users have multiple digital identities and need to monitor the use of their personal information by another organization.\par
+
+\subsection{Open banking}
 More recent attention has focused on data sharing. The common scenario is Open Banking system since it needs secure identity authentication and the perfect mechanism of user data privacy. With blockchain technology, it can solve the shortcoming of the centralized system and prevent user's data from being breached.
