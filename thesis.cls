@@ -599,7 +599,7 @@
     % Author
       &\LARGE{\makebox[4em][s]{研究生}：}&{\@authorzh}&\vspace{1em}\\%
     % Advisor
-      &{指導教授：}&{\@advisorzh}&{博士}\\%
+      &{指導教授：}&{\@advisorzh}&{教授}\\%
     % Co-Advisor A
       \ifx \@coadvisorAzh \@empty \else
         &&{\@coadvisorAzh}&{博士}\\%
