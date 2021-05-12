@@ -1,8 +1,12 @@
 \chapter{Experimental Evaluation}
 \label{chapter:evaluation}
 
-Here is the evaluation.
+
+\section{Environment setup}
 \input{tables/table-setup.tex}
+We set up an experimental environment on a PC running Ubuntu 18.04 and Intel i7-9700 CPU @ 3.00GHz. The \(TSP\)'s server and \(Org\)'s server run within a Docker container for local testing. We also deploy the blockchain network in Docker host with Geth tools. Table~\ref{table:setup} summarizes Ethereum blockchain parameters in our experiment. The TSP's servers and Org's servers run within a Docker container for local testing. For example, a bank system we used for evaluation in our includes the following servers: LDAP server, web server. Although the TSP's system maintains an LDAP server, it is only for record user's information and doesn't responsible for registration. It only allows blockchain-based login without providing username and password. 
+
+
 \section{Gas consumption}
 \input{tables/table-gas-consumption}
 
