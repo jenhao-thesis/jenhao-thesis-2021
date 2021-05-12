@@ -59,34 +59,37 @@ Besides, we define the user's bill information, the primary key of this informat
 
 \begin{figure}[htb]
     \centering
-    \frame{\includegraphics[height=!,width=0.85\linewidth,keepaspectratio=true]{figures/screenshot_controlpanelmode1.png}}
+    \frame{\includegraphics[height=!,width=0.8\linewidth,keepaspectratio=true]{figures/screenshot_controlpanelmode1.png}}
     \caption{{\footnotesize Screenshot of user's control panel with mode 1}}
     \label{fig:mode1}
 \end{figure}
 
 \begin{figure}[htb]
     \centering
-    \frame{\includegraphics[height=!,width=0.85\linewidth,keepaspectratio=true]{figures/screenshot_authconfirm1.png}}
+    \frame{\includegraphics[height=!,width=0.8\linewidth,keepaspectratio=true]{figures/screenshot_authconfirm1.png}}
     \caption{{\footnotesize Screenshot of user's confirmation with mode 1}}
-    \label{fig:mode1}
+    \label{fig:mode1confirm}
 \end{figure}
+
+We provide a web-based user interface (see Figure~\ref{fig:mode1},~\ref{fig:mode2}) for users to control their data access. A user can authorize or revoke access permission at any time through the control panel of this website (see Figure~\ref{fig:mode1confirm}). Although this control panel is provided by the TSP, the TSP will not make access decisions on behalf of the user and the user can interact with web3 on the front-end side via MetaMask to connect to the specific Ethereum node.
 
 \begin{figure}[htb]
     \centering
-    \frame{\includegraphics[height=!,width=0.85\linewidth,keepaspectratio=true]{figures/screenshot_controlpanelmode2.png}}
+    \frame{\includegraphics[height=!,width=0.9\linewidth,keepaspectratio=true]{figures/screenshot_controlpanelmode2.png}}
     \caption{{\footnotesize Screenshot of user's control panel with mode 2}}
     \label{fig:mode2}
 \end{figure}
 
 \begin{figure}[htb]
     \centering
-    \frame{\includegraphics[height=!,width=0.85\linewidth,keepaspectratio=true]{figures/screenshot_requestJWT.png}}
+    \frame{\includegraphics[height=!,width=0.9\linewidth,keepaspectratio=true]{figures/screenshot_requestJWT.png}}
     \caption{{\footnotesize Screenshot of JWTs that already stored in TSP}}
     \label{fig:sreenshotJWT}
 \end{figure}
-\newpage
+Once the access decision had been made, the user clicks on the "Get token" button to inform the TSP to request for JWTs, and then the user can view the number of JWTs that the TSP got. So that the user can trace how many JWTs are issued by banks.
 
 \section{\textit{Org} \& \textit{TSP}}
+In our implementation, an employee of the TSP and Org have to verify users' identity, so they need a web-based user interface to interact with web3 as well. The main difference lies in the architecture. As shown in the Figure, the control panel only for employees of \(TSP\) or \(Org\).
 
 \begin{figure}[htb]
     \centering
