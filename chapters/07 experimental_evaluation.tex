@@ -10,31 +10,41 @@ In our proposed ecosystem, we use consortium blockchain as our blockchain networ
 \input{tables/table-gas-consumption}
 The Ethereum gas refers to the computational expense on the Ethereum network. The amount of gas consumption is determined by the difficulty of calculation. Table~\ref{table:gasUsed} shows the gas consumption of each smart contract function and contract deployment fee. There is a significant difference between the two type function calls. In the case of the deployment contract, it will spend more gas such \textit{bindAccount}. In other words, if the function does not involve complex logic or deployment, it will consume less gas such as \textit{addUser}, \textit{authorize}, \textit{revoke}.
 
-\section{Throughput}
+\section{Performance evaluation}
+To analyze and measure the performance of various system services, particularly our web applications. We used the Apache JMeter tools to perform stress testing on system functions and modules. Meanwhile, in order to be closer to the reality of the situation, we also simulated the functions of the general system for comparison. We have divided the evaluation results into three parts: User Login System, Account Integration, and Data Sharing. The number of users for our throughput performance testing is 1000, 2000, 3000, and 5000. The send rate (transaction per second) varies from 10 to 500, depending on the intention of each function.
+\subsection*{User Login System}
 \begin{figure}[htb]
     \centering
     \includegraphics[height=!,width=0.9\linewidth,keepaspectratio=true]{figures/login-throughput.png}
-    \caption{{\footnotesize Number of users vs throughput}}
+    \caption{{\footnotesize Throughput of various login systems under different users.}}
     \label{fig:loginThroughput}
 \end{figure}
 
+\newpage
+
+\subsection*{Account Integration}
 \begin{figure}[htb]
     \centering
     \includegraphics[height=!,width=1\linewidth,keepaspectratio=true]{figures/smart_contract_tps.png}
-    \caption{{\footnotesize Each function of smart contract}}
+    \caption{{\footnotesize Throughput of smart contract functions under different users.}}
     \label{fig:contract_tps}
 \end{figure}
+\newpage
+
+\subsection*{Data Sharing}
+
+
 
 \begin{figure}[htb]
     \centering
     \includegraphics[height=!,width=1\linewidth,keepaspectratio=true]{figures/authorize_comparsion.png}
-    \caption{{\footnotesize Comparsion of two modes}}
+    \caption{{\footnotesize Throughput of mode 1 and mode 2 under different users.}}
     \label{fig:authorize_compare}
 \end{figure}
 
 \begin{figure}[htb]
     \centering
     \includegraphics[height=!,width=1\linewidth,keepaspectratio=true]{figures/query.png}
-    \caption{{\footnotesize Query with JWT and blockchain}}
+    \caption{{\footnotesize Throughput of normal query and blockchain-based query under different users.}}
     \label{fig:query}
 \end{figure}
