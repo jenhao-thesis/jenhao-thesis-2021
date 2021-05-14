@@ -19,7 +19,7 @@ To analyze and measure the performance of various system services, particularly 
     \caption{{\footnotesize Throughput of various login systems under different users.}}
     \label{fig:loginThroughput}
 \end{figure}
-The results of the performance analysis are shown in Figure~\ref{fig:loginThroughput}. The \textit{Login} means that the user sent a login request to the server for authentication. We also tested two different consensus algorithms separately. As far as \textit{Login} function is concerned, there is not much difference between these two consensus algorithms. Although login with blockchain has lower performance than general login, it can still meet the login needs.
+The results of the performance analysis are shown in Figure~\ref{fig:loginThroughput}. The \textit{Login} means that the user sent a login request to the server for authentication. We also tested two different consensus algorithms separately. As far as \textit{Login} function is concerned, there is not much difference between these two consensus algorithms, because the login process is a read-operation. Although login with blockchain has lower performance than general login, it can still meet the login needs.
 \newpage
 
 \subsection*{Account Integration}
@@ -29,6 +29,8 @@ The results of the performance analysis are shown in Figure~\ref{fig:loginThroug
     \caption{{\footnotesize Throughput of smart contract functions under different users.}}
     \label{fig:contract_tps}
 \end{figure}
+As shown in Figure~\ref{fig:contract_tps}, the throughput for different functions of the smart contract. These functions above are write-operations that will update the state of the blockchain. A transaction is broadcasted to the entire blockchain network, processed transactions by miners, and then is published to the blockchain. The throughput will vary according to the complexity of the state change. As shown in the line chart above, the simpler the function, the higher the throughput, which also means that more transactions can be accommodated in the same block. However, the observed difference between \textit{Bind} and others in this result was significant, only five transactions per second. This is reasonable due to the creation of \textit{ACMgr}. Although the throughput is low, each user only needs to do it once, which is acceptable.
+
 \newpage
 
 \subsection*{Data Sharing}
