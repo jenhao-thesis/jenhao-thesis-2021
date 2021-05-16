@@ -814,7 +814,7 @@
       \setlength{\tabcolsep}{0.25em}%
       \begin{tabular}{rlc}%
   % Advisor
-        \large{指導教授：}&{\large{\@advisorzh}}&{\large{博士}}\\%
+        \large{指導教授：}&{\large{\@advisorzh}}&{\large{教授}}\\%
   % Co-advisor A
         \ifx \@coadvisorAzh \@empty \else
           &{\large{\@coadvisorAzh}}&{\large{博士}}\\%
