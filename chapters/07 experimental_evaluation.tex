@@ -11,14 +11,14 @@ In our proposed ecosystem, we use consortium blockchain as our blockchain networ
 The Ethereum gas refers to the computational expense on the Ethereum network. The amount of gas consumption is determined by the difficulty of calculation. Table~\ref{table:gasUsed} shows the gas consumption of each smart contract function and contract deployment fee. There is a significant difference between the two type function calls. In the case of the deployment contract, it will spend more gas such \textit{bindAccount}. In other words, if the function does not involve complex logic or deployment, it will consume less gas such as \textit{addUser}, \textit{authorize}, \textit{revoke}.
 
 \section{Performance evaluation}
-To analyze and measure the performance of various system services, particularly our web applications. We used the Apache JMeter tools to perform stress testing on system functions and modules. Meanwhile, in order to be closer to the reality of the situation, we also simulated the functions of the general system for comparison. We have divided the evaluation results into three parts: User Login System, Account Integration, and Data Sharing. The number of users for our throughput performance testing is 1,000, 2,000, 3,000, and 5,000. The send rate (transaction per second) varies from 10 to 800, depending on the intention of each function.
+To analyze and measure the performance of various system services, particularly our web applications. We used the Apache JMeter tools to perform stress testing on system functions and modules. Meanwhile, in order to be closer to the reality of the situation, we also simulated the functions of the general system for comparison. We have divided the evaluation results into three parts: User Login System, Account Integration, and Data Sharing. The number of users for our throughput performance testing is 1,000, 2,000, 3,000, and 5,000. The send rate (transaction per second) varies from 10 to 500, depending on the intention of each function.
 \input{tables/table-metrics.tex}
 
 \subsection*{User Login System}
 \begin{figure}[htb]
     \centering
-    \includegraphics[height=!,width=0.9\linewidth,keepaspectratio=true]{figures/login-throughput.png}
-    \caption{{\footnotesize Throughput of various login systems under different users.}}
+    \includegraphics[height=!,width=1\linewidth,keepaspectratio=true]{figures/login-throughput-latency.png}
+    \caption{{\footnotesize Throughput and latency of various login systems under different send rate.}}
     \label{fig:loginThroughput}
 \end{figure}
 The results of the performance analysis are shown in Figure~\ref{fig:loginThroughput}. The \textit{Login} means that the user sent a login request included username and password to the server for authentication. We also tested blockchain-base login with two different consensus algorithms (\textit{Login(POA)}, \textit{Login(POW)}). As far as \textit{Login} function is concerned, there is not much difference between these two consensus algorithms, because the login process is a read-operation. Although login with blockchain has lower performance than general login, it can still meet the login needs.
