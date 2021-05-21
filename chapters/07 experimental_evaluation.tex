@@ -28,7 +28,7 @@ The results of the performance analysis are shown in Figure~\ref{fig:loginThroug
 \begin{figure}[htb]
     \centering
     \includegraphics[height=!,width=1\linewidth,keepaspectratio=true]{figures/smart_contract_tps.png}
-    \caption{{\footnotesize Throughput of smart contract functions under different users.}}
+    \caption{{\footnotesize Throughput of smart contract functions under the different number of users.}}
     \label{fig:contract_tps}
 \end{figure}
 As shown in Figure~\ref{fig:contract_tps}, the throughput for different functions of the smart contract. These functions above are write-operations that will update the state of the blockchain. A transaction is broadcasted to the entire blockchain network, processed transactions by miners, and then is published to the blockchain. The throughput will vary according to the complexity of the state change. As shown in the line chart above, the simpler the function, the higher the throughput, which also means that more transactions can be accommodated in the same block. However, the observed difference between \textit{Bind} and others in this result was significant, \textit{Bind} have only five transactions per second. In other words, the blockchain network can only process five bindings of user account per second. Because the binding process involves creating new contracts (\textit{ACMgr}), it will cost more gas. Although the throughput of the binding process is low, each user account only needs to execute once so that the performance is acceptable.
@@ -37,18 +37,22 @@ As shown in Figure~\ref{fig:contract_tps}, the throughput for different function
 
 \subsection*{Data Sharing}
 
-
-
 \begin{figure}[htb]
     \centering
     \includegraphics[height=!,width=1\linewidth,keepaspectratio=true]{figures/authorize_comparsion.png}
-    \caption{{\footnotesize Throughput of mode 1 and mode 2 under different users.}}
+    \caption{{\footnotesize Throughput of mode 1 and mode 2 under the different number of users.}}
     \label{fig:authorize_compare}
 \end{figure}
+To evaluate the performance of data sharing, we simulated user behavior of authorizing and revoking access rights. We created at least 5,000 Ethereum accounts and used these accounts to bind with the user identification separately. Then, each account sent a request to the blockchain to change the access permission. Because it will change the state of blockchain, these operations are write-operations.
+\par
+
+Figure~\ref{fig:authorize_compare} shows the throughput of two kinds of different access authorization modes under the different number of users. Authorize/Revoke and AuthorizeAll/RevokeAll represent mode1 and mode2, respectively. With successive increases in the number of users, the throughput of authorization and revocation remained roughly at 150 and 350. Our blockchain-based ecosystem has the ability to process these requests that update the state of the smart contract in acceptable throughput.
+
+\newpage
 
 \begin{figure}[htb]
     \centering
     \includegraphics[height=!,width=1\linewidth,keepaspectratio=true]{figures/query.png}
-    \caption{{\footnotesize Throughput of normal query and blockchain-based query under different users.}}
+    \caption{{\footnotesize Throughput and latency of normal query and blockchain-based query under different send rate}}
     \label{fig:query}
 \end{figure}
