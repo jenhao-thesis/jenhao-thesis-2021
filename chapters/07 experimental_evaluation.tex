@@ -56,3 +56,6 @@ Figure~\ref{fig:authorize_compare} shows the throughput of two kinds of differen
     \caption{{\footnotesize Throughput and latency of normal query and blockchain-based query under different send rate}}
     \label{fig:query}
 \end{figure}
+To obtain customer information from the bank, we implement JWT authentication for TSP. If TSP sends a data query request to the bank, TSP puts its JWT into the header of the request. The results of throughput and latency of the data query are shown in Figure~\ref{fig:query}. It indicates the comparison between normal query and blockchain authenticated query. In a normal query, the bank's server only authenticates the JWT. In blockchain authenticated query (\textit{Query(POA)}), the bank's server authenticates the JWT as well as access rights on the user's \textit{ACMgr}.
+\par 
+In summary, we applied blockchain technology and a stateless authentication mechanism to our proposed system. Identity creation and authentication are constructed using the smart contract that can read and write the blockchain ledger. Since the blockchain enables every bank to have the same ledger using a consensus mechanism, the ability for TSPs or users to view the status of smart contracts becomes easier. With blockchain, it achieves transparency, tamper-resistant, and better Security.
