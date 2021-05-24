@@ -50,11 +50,15 @@
 \newpage
 
 \section{Open Banking}
-- Open Banking flow
-- Current TSP in Taiwan
-- Three stage table
-\subsection*{Third-party Service Provider (TSP)}
-
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=!,width=1\linewidth,keepaspectratio=true]{figures/tsp_flow.png}
+    \caption{{\footnotesize Relaptionship between users and banks}}
+    \label{fig:tsp_flow}
+\end{figure}
+In the traditional banking system, the transaction data of a user's account is widely regarded as bank assets. Open Banking aims to return the control of bank account information to users so that users have the right to allow other TSPs to access their account information using API. Sharing financial data can bring more diverse financial services to users and it can also promote innovation and cooperation between banks and TSP. The relationship between users and banks is shown in Figure~\ref{fig:tsp_flow}.
+\par
+The Open banking is governed by UK and European regulations including Revised Payment Services Directive (PSD2), General Data Protection Regulation(GDPR), etc. In the United Kingdom, Open Banking Implementation Entity (OBIE) was created to develop API standards for open banking. It also requires domestic banks to allow verified TSPs to access user data with the user’s consent to provide customized services. Currently, each bank or TSP is required to renew users' approval for data sharing once every 90 days~\cite{morton}. 
 
 \newpage
 
